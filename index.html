@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Nimlesh Kumari – Learn, Earn & Shine ✨ | Only for Women Community</title>
+    <title>Nimlesh Kumari — Digital Mentor | Earn From Home</title>
 
     <!-- SEO -->
-    <meta name="description" content="Join 10K+ women learning in-demand skills and earning ₹50K-₹1L monthly. Start today!">
+    <meta name="description" content="Join Nimlesh Kumari and learn digital skills to earn from home. 500+ women already started!">
     <meta property="og:image" content="https://i.ibb.co/mrFgnwT4/Whats-App-Image-2026-06-03-at-11-51-16-AM.jpg">
     <meta name="theme-color" content="#EF4444">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 
     <!-- Meta Pixel Code -->
     <script>
@@ -34,600 +31,641 @@
 
     <style>
         :root {
-            /* Light Red Theme */
-            --lightest: #FEF2F2;
-            --light: #FECACA;
             --primary: #EF4444;
-            --darkest: #991B1B;
+            --primary-light: #FECACA;
+            --primary-lighter: #FEF2F2;
+            --primary-dark: #B91C1C;
+            --primary-darkest: #7F1D1D;
             --white: #FFFFFF;
-            --shadow: 0 6px 20px rgba(239, 68, 68, .15);
-            --shadow-hover: 0 10px 30px rgba(239, 68, 68, .25);
-            --glow: 0 0 25px rgba(254, 202, 202, .5);
-            --glow-intense: 0 0 40px rgba(254, 202, 202, .7);
+            --dark: #1F2937;
+            --gray: #6B7280;
+            --light-gray: #F3F4F6;
             --wa-green: #25D366;
             --wa-dark: #128C7E;
-            /* Feedback Colors - Red/Pink */
-            --feedback-bg: #FEF2F2;
-            --feedback-primary: #EF4444;
-            --feedback-light: #FECACA;
-            --feedback-dark: #B91C1C;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--lightest);
-            color: var(--darkest);
+            background: var(--white);
+            color: var(--dark);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        .glow-pulse { animation: pulseGlow 2.5s infinite; }
-
-        @keyframes pulseGlow {
-            0%,100%{box-shadow:0 0 20px rgba(239, 68, 68, .4);}
-            50%{box-shadow:0 0 40px rgba(239, 68, 68, .8);}
+        /* WhatsApp Button */
+        .wa-btn {
+            background: linear-gradient(135deg, var(--wa-green), var(--wa-dark));
+            color: var(--white) !important;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 8px 25px rgba(37,211,102,.35);
+            cursor: pointer;
+            transition: all .3s ease;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+        .wa-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 12px 35px rgba(37,211,102,.5);
+        }
+        .wa-btn-outline {
+            background: transparent;
+            color: var(--primary) !important;
+            border: 2px solid var(--primary);
+            box-shadow: none;
+        }
+        .wa-btn-outline:hover {
+            background: var(--primary);
+            color: var(--white) !important;
         }
 
-        /* WhatsApp Buttons */
-        .open-any{
-            background:linear-gradient(135deg,var(--wa-green),var(--wa-dark)) !important;
-            color:var(--white) !important;
-            padding:.85rem 1.8rem;border-radius:50px;font-weight:800;border:none;
-            display:inline-flex;align-items:center;gap:.5rem;
-            box-shadow:0 8px 20px rgba(37,211,102,.3);
-            cursor:pointer;transition:all .3s;text-decoration:none;font-size:1rem;white-space:nowrap;
-            position:relative;overflow:hidden;
+        /* Sections */
+        section { padding: 60px 0; }
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 8px;
         }
-        .open-any:hover{
-            transform:translateY(-3px) scale(1.03);
-            box-shadow:0 0 40px rgba(37,211,102,.7),0 15px 30px rgba(37,211,102,.4);
+        .section-subtitle {
+            color: var(--gray);
+            font-size: 1rem;
+            margin-bottom: 40px;
         }
-        .open-any:active{transform:translateY(0) scale(.98);}
 
-        section{padding:50px 0;position:relative;}
-        .hero-section{
-            background: linear-gradient(135deg, var(--lightest), var(--light));
-            padding:70px 0 50px;overflow:hidden;
+        /* Hero - NO IMAGE */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-lighter), var(--white));
+            padding: 100px 0 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
         }
-        .badge-custom{
-            background:linear-gradient(135deg,var(--light),var(--primary));
-            color:var(--white);padding:.6rem 1.5rem;border-radius:50px;font-weight:700;font-size:.875rem;
-            display:inline-block;margin-bottom:1rem;box-shadow:var(--shadow);
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
-        .gradient-text{
-            background:linear-gradient(135deg,var(--primary),var(--darkest));
-            -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-            font-weight:800;font-family:'Playfair Display',serif;
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--dark);
+            margin-bottom: 20px;
+            max-width: 650px;
         }
-        .hero-text-compact{max-width:600px;margin:0 auto 1.5rem;font-size:1.125rem;line-height:1.4;color:var(--darkest);}
-        .stat-card{
-            background: var(--white); padding:1.25rem;border-radius:12px;box-shadow:var(--shadow);
-            text-align:center;transition:all .3s;height:100%;
+        .hero h1 span { color: var(--primary); }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--gray);
+            margin-bottom: 24px;
+            max-width: 550px;
+            line-height: 1.7;
         }
-        .stat-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-hover);}
-        .counter{font-size:2rem;font-weight:800;color:var(--primary);}
+        .hero-stat {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 35px;
+            padding: 20px 28px;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,.08);
+            max-width: 340px;
+            border: 1px solid var(--primary-light);
+        }
+        .hero-stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
 
-        /* REEL-SIZE + ON-PAGE PLAY */
-        .reel-track{display:flex;gap:15px;overflow-x:auto;padding-bottom:8px;}
-        .reel-card{flex:0 0 320px;height:570px;border-radius:15px;overflow:hidden;box-shadow:var(--shadow);background:#000;}
-        .reel-player{width:100%;height:100%;border:0;border-radius:15px;}
-
-        /* Feedback Section Red Colors */
-        .feedback-section {
-            background: linear-gradient(135deg, var(--feedback-bg), #FEE2E2);
-        }
-        .feedback-section h2 {
-            color: var(--feedback-dark) !important;
-        }
-        .feedback-section .text-muted {
-            color: var(--feedback-primary) !important;
-        }
-        .feedback-card {
-            border: 3px solid var(--feedback-light);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.2);
-            transition: all 0.3s;
+        /* Mentor Section */
+        .mentor-section {
             background: var(--white);
         }
-        .feedback-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(239, 68, 68, 0.3);
-            border-color: var(--feedback-primary);
-        }
-
-        .step-card{background: var(--white); border-radius:15px;padding:1.5rem;box-shadow:var(--shadow);transition:all .4s;height:100%;}
-        .step-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-hover);}
-        .step-number{width:50px;height:50px;background:linear-gradient(135deg,var(--primary),var(--light));color:var(--white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.3rem;flex-shrink:0;}
-
-        .accordion-item{border:none;border-radius:10px !important;margin-bottom:.75rem;box-shadow:var(--shadow);}
-        .accordion-button{background: var(--white); color:var(--darkest);font-weight:600;padding:1rem;}
-        .accordion-button:not(.collapsed){background:linear-gradient(135deg,var(--lightest),var(--white));color:var(--primary);}
-        .accordion-body{color:var(--darkest);}
-
-        .form-backdrop,.privacy-modal{position:fixed;inset:0;background:rgba(153,27,27,.8);backdrop-filter:blur(8px);z-index:9999;opacity:0;visibility:hidden;transition:all .4s;}
-        .form-backdrop.show,.privacy-modal.show{opacity:1;visibility:visible;}
-        #formContainer,#privacyContent{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.9);z-index:10000;max-width:500px;width:90%;max-height:85vh;opacity:0;visibility:hidden;transition:all .4s;background:var(--white);border:1px solid var(--primary);border-radius:15px;box-shadow:0 0 40px rgba(239,68,68,.3);}
-        #formContainer.show,#privacyContent.show{opacity:1;visibility:visible;transform:translate(-50%,-50%) scale(1);}
-        .form-card{box-shadow:0 0 40px rgba(239,68,68,.3);border:1px solid var(--primary);}
-        .form-control,.form-select{background: var(--lightest); border:2px solid var(--light);color:var(--darkest);border-radius:8px;padding:.6rem .9rem;transition:all .3s;}
-        .form-control:focus,.form-select:focus{border-color:var(--primary);box-shadow:0 0 0 4px rgba(239,68,68,.15);}
-
-        /* Feedback Gallery */
-        .feedback-img {
+        .mentor-img {
             width: 100%;
-            height: 300px;
+            max-width: 350px;
+            height: 420px;
             object-fit: cover;
-            border-radius: 15px;
-            box-shadow: var(--shadow);
-            transition: all .3s;
-            border: 3px solid var(--feedback-light);
-        }
-        .feedback-img:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
-            border-color: var(--feedback-primary);
-        }
-
-        /* Hero Image - Smaller Size */
-        .hero-image-wrapper {
-            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(239,68,68,.15);
             margin: 0 auto;
+            display: block;
         }
-        .hero-image-wrapper img {
-            width: 100%;
-            max-height: 450px;
-            object-fit: cover;
-            border-radius: 15px;
+
+        /* Trust Cards */
+        .trust-card {
+            background: var(--white);
+            border: 1px solid var(--light-gray);
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            transition: all .3s ease;
+            height: 100%;
+        }
+        .trust-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(239,68,68,.12);
+            border-color: var(--primary-light);
+        }
+        .trust-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary-lighter), var(--primary-light));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 1.5rem;
+        }
+        .trust-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+        .trust-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        /* Skills - NO IMAGE */
+        .skills-section {
+            background: linear-gradient(135deg, var(--primary-lighter), var(--white));
+        }
+        .skill-item {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,.04);
+            transition: all .3s ease;
+            border-left: 4px solid var(--primary);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .skill-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(239,68,68,.1);
+        }
+        .skill-icon {
+            font-size: 1.4rem;
+            min-width: 32px;
+        }
+        .skill-item span {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Testimonials */
+        .testi-card {
+            background: var(--white);
+            border: 1px solid var(--light-gray);
+            border-radius: 20px;
+            padding: 28px;
+            height: 100%;
+            transition: all .3s ease;
+        }
+        .testi-card:hover {
+            box-shadow: 0 15px 40px rgba(239,68,68,.1);
+            border-color: var(--primary-light);
+        }
+        .stars {
+            color: #F59E0B;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+        .testi-text {
+            font-size: 0.95rem;
+            color: var(--dark);
+            font-style: italic;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .testi-name {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 0.95rem;
+            margin-bottom: 2px;
+        }
+        .testi-role {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        /* Story Section */
+        .story-section {
+            background: var(--white);
+        }
+        .story-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .story-tag {
+            background: linear-gradient(135deg, var(--primary-lighter), var(--primary-light));
+            color: var(--primary-dark);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Who Can Join */
+        .join-section {
+            background: linear-gradient(135deg, var(--primary-lighter), var(--white));
+        }
+        .join-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 32px 24px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,.06);
+            transition: all .3s ease;
+            height: 100%;
+        }
+        .join-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(239,68,68,.12);
+        }
+        .join-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .join-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+        }
+        .final-cta h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .final-cta p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.85rem;
+            opacity: 0.7;
         }
 
         @media(max-width:768px){
-            section{padding:40px 0;}
-            .hero-section{padding:50px 0 30px;}
-            .reel-card{flex:0 0 85vw;height:152vw;}
-            .counter{font-size:1.6rem;}
-            .open-any{width:100%;justify-content:center;}
-            h1.display-3{font-size:2rem;}
-            h2.display-5{font-size:1.5rem;}
-            .feedback-img { height: 250px; }
-            .hero-image-wrapper {
-                max-width: 280px;
-            }
-            .hero-image-wrapper img {
-                max-height: 320px;
-            }
-        }
-        @media(prefers-reduced-motion:reduce){
-            *{animation-duration:.01ms !important;transition-duration:.01ms !important;}
+            .hero { padding: 70px 0 50px; min-height: auto; }
+            .hero h1 { font-size: 2rem; }
+            .mentor-img { max-width: 280px; height: 360px; }
+            .section-title { font-size: 1.5rem; }
+            section { padding: 40px 0; }
+            .final-cta h2 { font-size: 1.6rem; }
         }
     </style>
 <base target="_blank">
 </head>
-<body class="text-dark">
+<body>
 
-<!-- FORM BACKDROP -->
-<div class="form-backdrop" id="formBackdrop"></div>
-
-<!-- PRIVACY MODAL -->
-<div class="privacy-modal" id="privacyModal">
-    <div class="privacy-content" id="privacyContent">
-        <button class="btn-close position-absolute top-0 end-0 m-3" id="closePrivacyBtn" aria-label="Close"></button>
-        <h2 class="h4 fw-bold mb-3" style="color:var(--primary);">Privacy Policy</h2>
-        <div style="font-size:0.9rem;line-height:1.6;">
-            <p><strong>Information We Collect:</strong> Name, phone, email you provide via WhatsApp or forms.</p>
-            <p><strong>How We Use It:</strong> Only to share course info, support, updates. Never sold.</p>
-            <p><strong>Your Rights:</strong> Access, correct, delete anytime. Contact us.</p>
-            <p class="mt-3"><strong>Disclaimer:</strong> Results depend on personal effort. Earnings vary.</p>
-            <p class="text-center mb-0">© 2025 Learn with Nimlesh. All rights reserved.</p>
-        </div>
-    </div>
-</div>
-
-<!-- ===== HERO ===== -->
-<section class="hero-section text-center">
+<!-- ===== HERO - NO IMAGE ===== -->
+<section class="hero">
     <div class="container">
-        <div class="badge-custom glow-pulse">🚀 Women-Only Skill Seekers Community</div>
-        <h1 class="display-3 fw-bold gradient-text mb-2 animate-fade-in">
-            Join <span class="counter" data-target="10000" data-suffix="+">0</span> Women
-        </h1>
-        <p class="hero-text-compact">Rising Together • From Zero to Online Earner</p>
-    </div>
-</section>
-
-<!-- ===== ABOUT / FULL IMAGE ===== -->
-<section class="py-5" style="background: var(--lightest);">
-    <div class="container">
-        <div class="row g-4 align-items-center">
-            <div class="col-lg-6">
-                <div class="open-any glow-pulse mb-3 d-inline-block">👇 See My Journey 👇</div>
-                <!-- SMALLER HERO IMAGE -->
-                <div class="hero-image-wrapper shadow-lg">
-                    <img src="https://i.ibb.co/mrFgnwT4/Whats-App-Image-2026-06-03-at-11-51-16-AM.jpg" alt="Nimlesh Journey" loading="lazy">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="badge-custom mb-2">💫 Your Coach</div>
-                <h2 class="display-5 fw-bold mb-3">Hi, I'm Nimlesh Kumari</h2>
-                <div class="mb-3">
-                    <p class="fs-5 d-flex align-items-center gap-2 mb-2">✅ Entrepreneur</p>
-                    <p class="fs-5 d-flex align-items-center gap-2 mb-2">💻 Freelancer</p>
-                    <p class="fs-5 d-flex align-items-center gap-2">🎯 Online-Skills Coach</p>
-                </div>
-                <div class="p-3 rounded-2 mb-3 glow-border" style="background: var(--white);">
-                    <h3 class="h5 fw-bold mb-2" style="color:var(--primary);">🎯 My Vision:</h3>
-                    <p class="fs-5 fw-semibold mb-0">"Empower Women to Empower Themselves"</p>
-                </div>
-                <button class="open-any mb-4 shine-effect">📲 Connect on WhatsApp</button>
-                <div class="row g-3">
-                    <div class="col-md-4"><div class="stat-card shine-effect"><div class="counter" data-target="5" data-suffix="+">0</div><p>Years of Experience</p></div></div>
-                    <div class="col-md-4"><div class="stat-card shine-effect"><div class="counter" data-target="2000" data-suffix="+">0</div><p>Women Helped</p></div></div>
-                    <div class="col-md-4"><div class="stat-card shine-effect"><div class="counter" data-target="100000" data-prefix="₹">0</div><p>Monthly Earning</p></div></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== FEEDBACK VIDEOS SECTION - RED COLOR & SIDE BY SIDE VIDEOS ===== -->
-<section class="py-5 feedback-section">
-    <div class="container">
-        <h2 class="text-center display-5 fw-bold mb-3">✨ Real Success Stories</h2>
-        <p class="text-center mb-4" style="color: var(--feedback-primary); font-weight: 600;">100% real feedback from women in our community</p>
-
-        <!-- Both Videos Side by Side -->
-        <div class="row g-4 justify-content-center mb-5">
-            <!-- First Video -->
-            <div class="col-lg-5 col-md-6">
-                <div class="feedback-card">
-                    <div class="reel-card" style="width: 100%; height: 500px; flex: none;">
-                        <iframe class="reel-player" src="https://www.youtube.com/embed/Ixy58bECee0?autoplay=0&mute=0&controls=1&modestbranding=1&rel=0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-            <!-- Second Video -->
-            <div class="col-lg-5 col-md-6">
-                <div class="feedback-card">
-                    <div class="reel-card" style="width: 100%; height: 500px; flex: none;">
-                        <iframe class="reel-player" src="https://www.youtube.com/embed/ndNjiaYjrIc?autoplay=0&mute=0&controls=1&modestbranding=1&rel=0" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Feedback Images Grid -->
-        <div class="row g-3">
-            <div class="col-md-3 col-6">
-                <img src="https://i.ibb.co/0R6zKV7f/Whats-App-Image-2026-03-05-at-1-10-02-PM.jpg" class="feedback-img" alt="Feedback 1">
-            </div>
-            <div class="col-md-3 col-6">
-                <img src="https://i.ibb.co/LhDJnNZN/Whats-App-Image-2026-03-05-at-1-11-27-PM.jpg" class="feedback-img" alt="Feedback 2">
-            </div>
-            <div class="col-md-3 col-6">
-                <img src="https://i.ibb.co/ychMgt6h/Whats-App-Image-2026-03-05-at-1-11-27-PM-2.jpg" class="feedback-img" alt="Feedback 3">
-            </div>
-            <div class="col-md-3 col-6">
-                <img src="https://i.ibb.co/ZvTWVkQ/Whats-App-Image-2026-03-05-at-1-11-28-PM.jpg" class="feedback-img" alt="Feedback 4">
-            </div>
-            <div class="col-md-3 col-6">
-                <img src="https://i.ibb.co/7tmZr1yN/Whats-App-Image-2026-03-05-at-1-11-28-PM-1.jpg" class="feedback-img" alt="Feedback 5">
-            </div>
-            <div class="col-md-3 col-6">
-                <img src="https://i.ibb.co/9HXM3y2v/Whats-App-Image-2026-03-05-at-1-11-29-PM.jpg" class="feedback-img" alt="Feedback 6">
-            </div>
-            <div class="col-md-3 col-6">
-                <img src="https://i.ibb.co/jPVNcCjN/Whats-App-Image-2026-03-05-at-1-11-30-PM.jpg" class="feedback-img" alt="Feedback 7">
-            </div>
-            <div class="col-md-3 col-6">
-                <img src="https://i.ibb.co/qLHvcQ10/Whats-App-Image-2026-03-05-at-1-11-30-PM-1.jpg" class="feedback-img" alt="Feedback 8">
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== STEPS ===== -->
-<section class="py-5" style="background: var(--lightest);">
-    <div class="container">
-        <h2 class="text-center display-5 fw-bold mb-4" style="color:var(--primary);">What Happens When You Join?</h2>
-        <div class="row g-3">
-            <div class="col-md-6 col-lg-3">
-                <div class="step-card shine-effect">
-                    <div class="d-flex align-items-start gap-3">
-                        <div class="step-number">1</div>
-                        <div>
-                            <h3 class="h5 fw-bold mb-2" style="color:var(--primary);">Instant Connection</h3>
-                            <p>Direct WhatsApp access to me</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="step-card shine-effect">
-                    <div class="d-flex align-items-start gap-3">
-                        <div class="step-number">2</div>
-                        <div>
-                            <h3 class="h5 fw-bold mb-2" style="color:var(--primary);">Complete Access</h3>
-                            <p>Proven step-by-step training system</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="step-card shine-effect">
-                    <div class="d-flex align-items-start gap-3">
-                        <div class="step-number">3</div>
-                        <div>
-                            <h3 class="h5 fw-bold mb-2" style="color:var(--primary);">Daily Mentorship</h3>
-                            <p>24/7 support & community access</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="step-card shine-effect">
-                    <div class="d-flex align-items-start gap-3">
-                        <div class="step-number">4</div>
-                        <div>
-                            <h3 class="h5 fw-bold mb-2" style="color:var(--primary);">Start Earning</h3>
-                            <p>Begin from Week 1 confidently</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-5"><button class="open-any shine-effect">📲 Get Started Now</button></div>
-    </div>
-</section>
-
-<!-- ===== STATS (PURE WHITE) ===== -->
-<section class="py-5" style="background: linear-gradient(135deg,var(--lightest),var(--white));">
-    <div class="container">
-        <h2 class="text-center display-5 fw-bold mb-4" style="color:var(--primary);">Know Your Coach</h2>
-        <div class="row g-3 align-items-center">
-            <div class="col-md-6">
-                <div class="stats-white d-flex align-items-center gap-3 p-3 rounded-2 mb-3 shadow-sm">
-                    <div class="text-white d-flex align-items-center justify-content-center rounded-circle" style="width:70px;height:70px;background:linear-gradient(135deg,var(--primary),var(--light));">⭐</div>
-                    <div>
-                        <h3 class="fw-bold mb-1 fs-2"><span class="counter" data-target="5" data-suffix="+">0</span></h3>
-                        <p>Years of Experience</p>
-                    </div>
-                </div>
-                <div class="stats-white d-flex align-items-center gap-3 p-3 rounded-2 shadow-sm">
-                    <div class="text-white d-flex align-items-center justify-content-center rounded-circle" style="width:70px;height:70px;background:linear-gradient(135deg,var(--light),var(--darkest));">👥</div>
-                    <div>
-                        <h3 class="fw-bold mb-1 fs-2"><span class="counter" data-target="1000" data-suffix="+">0</span></h3>
-                        <p>Women Reached</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 text-center">
-                <div class="stats-white p-4 rounded-3 shadow-lg glow-pulse">
-                    <h3 class="fw-bold fs-3 mb-2" style="color:var(--primary);">🔥 Now it's YOUR time</h3>
-                    <div class="row text-center">
-                        <div class="col-6">
-                            <h4 class="fw-bold fs-2 mb-0" style="color:var(--primary);">₹<span class="counter" data-target="1600000">0</span></h4>
-                            <p class="text-muted">Earned by Women</p>
-                        </div>
-                        <div class="col-6">
-                            <h4 class="fw-bold fs-2 mb-0" style="color:var(--primary);"><span class="counter" data-target="300" data-suffix="+">0</span></h4>
-                            <p class="text-muted">Earning ₹50K–₹1L</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== FAQ ===== -->
-<section class="py-5" style="background: var(--white);">
-    <div class="container">
-        <h2 class="text-center display-5 fw-bold mb-4" style="color:var(--primary);">Frequently Asked Questions</h2>
         <div class="row justify-content-center">
-            <div class="col-lg-10">
-                <div class="accordion" id="faqAccordion">
-                    <div class="accordion-item glow-border"><h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">What kind of work will I be doing?</button></h2><div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">Digital skills: Website Design, Graphics, Editing, Content Creation, Monetization, etc. 100% legitimate.</div></div></div>
-                    <div class="accordion-item glow-border"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">Is this program legitimate & safe?</button></h2><div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Genuine training. 2000+ women earning consistently. Verify credentials.</div></div></div>
-                    <div class="accordion-item glow-border"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">How much time daily?</button></h2><div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Just 1-2 hours daily. Flexible for everyone.</div></div></div>
-                    <div class="accordion-item glow-border"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">When will I start earning?</button></h2><div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Within 1 month. Sustainable income in 1-2 months.</div></div></div>
-                    <div class="accordion-item glow-border"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">Any prior experience needed?</button></h2><div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">No experience needed! Step-by-step guidance provided.</div></div></div>
-                    <div class="accordion-item glow-border"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq6">What support after joining?</button></h2><div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Daily mentorship, 24/7 WhatsApp, weekly calls & women-only community.</div></div></div>
-                    <div class="accordion-item glow-border"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq7">Any investment required?</button></h2><div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Nominal fee covers everything. No hidden costs.</div></div></div>
-                    <div class="accordion-item glow-border"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq8">Can I do this alongside job/studies?</button></h2><div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes! Designed for busy women. Learn in free time.</div></div></div>
+            <div class="col-lg-8 text-center">
+                <div class="hero-badge">💬 Women-Only Community</div>
+                <h1>Learn Digital Skills & <span>Start Earning From Home</span> 💻✨</h1>
+                <p>I'm <strong>Nimlesh Kumari</strong> — Business Consultant & Digital Mentor. I have helped <strong>500+ people</strong> start earning online.</p>
+                <p style="font-size: 0.95rem; color: var(--gray);">From India · Helping people since 2019</p>
+                <a href="https://wa.me/919217956459" target="_blank" class="wa-btn">👉 Start Your Journey on WhatsApp</a>
+                <p style="font-size: 0.85rem; color: var(--gray); margin-top: 12px;">No experience needed • I'll guide you step by step</p>
+                <div class="hero-stat mx-auto">
+                    <div class="hero-stat-number">500+</div>
+                    <div class="text-start">
+                        <div style="font-weight: 700; color: var(--dark);">Women Already Started</div>
+                        <div style="font-size: 0.85rem; color: var(--gray);">Starting from zero, just like you ❤️</div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== MEET YOUR MENTOR ===== -->
+<section class="mentor-section">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-5 text-center">
+                <img src="https://i.ibb.co/mrFgnwT4/Whats-App-Image-2026-06-03-at-11-51-16-AM.jpg" alt="Nimlesh Kumari" class="mentor-img">
+            </div>
+            <div class="col-lg-7">
+                <p style="color: var(--primary); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Meet Your Mentor</p>
+                <h2 class="section-title">Hey 👋 I'm Nimlesh Kumari</h2>
+                <p style="color: var(--gray); font-size: 1.05rem; line-height: 1.8;">
+                    I am a <strong>Business Consultant and Digital Mentor</strong> who teaches people how to start earning online using just a smartphone.
+                </p>
+                <p style="color: var(--gray); font-size: 1.05rem; line-height: 1.8;">
+                    Whether you are a <strong>student</strong>, a <strong>housewife</strong>, or working a job — I guide you step-by-step to create an additional source of income.
+                </p>
+                <p style="color: var(--gray); font-size: 1.05rem; line-height: 1.8;">
+                    Maine khud ek waqt se shuru kiya tha — bina kisi experience ke. Aaj main uss journey ko aapke saath share karna chahti hoon. ❤️
+                </p>
+                <p style="color: var(--gray); font-size: 1.05rem; line-height: 1.8;">
+                    You are not alone. I've been exactly where you are right now.
+                </p>
+                <a href="https://wa.me/919217956459" target="_blank" class="wa-btn" style="margin-top: 10px;">💬 Let's Talk on WhatsApp</a>
+                <p style="font-size: 0.85rem; color: var(--gray); margin-top: 10px;">Free to message • I respond personally</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHY TRUST ME ===== -->
+<section style="background: var(--light-gray);">
+    <div class="container">
+        <div class="text-center">
+            <p style="color: var(--primary); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Why Trust Me</p>
+            <h2 class="section-title">Real Results. Real Support.</h2>
+            <p class="section-subtitle">No fake promises. No shortcuts. Honest guidance that genuinely works.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="trust-card">
+                    <div class="trust-icon">🎓</div>
+                    <h3>500+ Trained</h3>
+                    <p>Hundreds of women have already started their journey with my help.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="trust-card">
+                    <div class="trust-icon">🌱</div>
+                    <h3>Beginner-Friendly</h3>
+                    <p>Never earned online? That's exactly where I start you.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="trust-card">
+                    <div class="trust-icon">🗺️</div>
+                    <h3>Step-by-Step</h3>
+                    <p>Clear steps, no jargon. I'm with you at every stage.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="trust-card">
+                    <div class="trust-icon">🏠</div>
+                    <h3>Work From Home</h3>
+                    <p>Your phone. Your pace. Your home. No need to go anywhere.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="trust-card">
+                    <div class="trust-icon">💛</div>
+                    <h3>Real Support</h3>
+                    <p>I personally respond. You are never just another student.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SKILLS - NO IMAGE ===== -->
+<section class="skills-section">
+    <div class="container text-center">
+        <p style="color: var(--primary); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">What You'll Learn</p>
+        <h2 class="section-title">Skills That Actually Pay</h2>
+        <p class="section-subtitle">Real in-demand digital skills. Learn them on your phone, in your own time.</p>
+        <div class="skill-item">
+            <span class="skill-icon">🔗</span>
+            <span>Affiliate Marketing</span>
+        </div>
+        <div class="skill-item">
+            <span class="skill-icon">🎨</span>
+            <span>Canva Designing</span>
+        </div>
+        <div class="skill-item">
+            <span class="skill-icon">✍️</span>
+            <span>Content Creation</span>
+        </div>
+        <div class="skill-item">
+            <span class="skill-icon">🤖</span>
+            <span>AI Tools (Easy & Practical)</span>
+        </div>
+        <div class="skill-item">
+            <span class="skill-icon">📱</span>
+            <span>Social Media Growth</span>
+        </div>
+        <a href="https://wa.me/919217956459" target="_blank" class="wa-btn" style="margin-top: 20px;">👉 I Want To Learn This</a>
+        <p style="font-size: 0.85rem; color: var(--gray); margin-top: 10px;">Starting from zero is perfectly fine ❤️</p>
+    </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section style="background: var(--white);">
+    <div class="container">
+        <div class="text-center">
+            <p style="color: var(--primary); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Student Stories</p>
+            <h2 class="section-title">What They Say 💬</h2>
+            <p class="section-subtitle">Real students. Real results. No script.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="testi-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testi-text">"Maine socha tha mujhse nahi hoga. But Nimlesh didi ne ekdum simple tarike se samjhaya. Pehle mahine mein hi earning shuru ho gayi."</p>
+                    <div class="testi-name">Zara S.</div>
+                    <div class="testi-role">Student · Hyderabad</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="testi-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testi-text">"As a housewife I had no idea about digital marketing. Nimlesh guided me step by step and now I earn from my phone. So grateful."</p>
+                    <div class="testi-name">Fatima R.</div>
+                    <div class="testi-role">Homemaker · Mumbai</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="testi-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testi-text">"I was job hunting for months. After Nimlesh's guidance I started freelancing on Canva and now I have 3 clients. Life changed."</p>
+                    <div class="testi-name">Nadia K.</div>
+                    <div class="testi-role">Freelancer · Pune</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="testi-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testi-text">"Bilkul beginner thi main. Sirf phone tha. Aaj affiliate marketing se extra income aa rahi hai. Bohot shukriya Nimlesh ji."</p>
+                    <div class="testi-name">Rukhsar A.</div>
+                    <div class="testi-role">Part-time Earner · Delhi</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== MY STORY ===== -->
+<section class="story-section">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6">
+                <div style="display: flex; gap: 30px; margin-bottom: 30px;">
+                    <div class="text-center">
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">500+</div>
+                        <div style="font-size: 0.85rem; color: var(--gray);">Students Trained</div>
+                    </div>
+                    <div class="text-center">
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">5+</div>
+                        <div style="font-size: 0.85rem; color: var(--gray);">Years Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div style="font-size: 2rem; font-weight: 800; color: var(--primary);">5</div>
+                        <div style="font-size: 0.85rem; color: var(--gray);">Skills Taught</div>
+                    </div>
+                </div>
+                <p style="color: var(--primary); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">The Mentor</p>
+                <h2 class="section-title">My Story & Mission</h2>
+                <p style="color: var(--gray); font-size: 1.05rem; line-height: 1.8;">
+                    I started this journey because I wanted to become <strong>financially independent</strong> — without leaving my home, without compromising my values.
+                </p>
+                <p style="color: var(--gray); font-size: 1.05rem; line-height: 1.8;">
+                    Today, I earn from <strong>multiple digital sources</strong> and my only mission is to help women like you do the same.
+                </p>
+                <p style="color: var(--gray); font-size: 1.05rem; line-height: 1.8;">
+                    My goal: <strong>help 1000 women become financially free</strong> — students, homemakers, anyone ready to try.
+                </p>
+                <p style="color: var(--gray); font-size: 1.05rem; line-height: 1.8;">
+                    Aapko sirf ek step lena hai. Baaki main karti hoon. 🤝
+                </p>
+                <div class="story-tags">
+                    <span class="story-tag">💸 My Earnings</span>
+                    <span class="story-tag">🎯 My Goal</span>
+                    <span class="story-tag">🧕 Helping Women</span>
+                    <span class="story-tag">🏠 Homemakers</span>
+                    <span class="story-tag">📚 Students</span>
+                    <span class="story-tag">💯 Honest Guidance</span>
+                </div>
+                <a href="https://wa.me/919217956459" target="_blank" class="wa-btn" style="margin-top: 24px;">💬 Message Me on WhatsApp</a>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="https://i.ibb.co/mrFgnwT4/Whats-App-Image-2026-06-03-at-11-51-16-AM.jpg" alt="Nimlesh Kumari" style="width: 100%; max-width: 380px; height: 480px; object-fit: cover; border-radius: 20px; box-shadow: 0 20px 60px rgba(239,68,68,.15);">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHO CAN JOIN ===== -->
+<section class="join-section">
+    <div class="container">
+        <div class="text-center">
+            <p style="color: var(--primary); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Who Can Join</p>
+            <h2 class="section-title">This Is For You If…</h2>
+            <p class="section-subtitle">No degree. No laptop. No experience. Just a phone and a will to grow.</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="join-card">
+                    <div class="join-icon">📚</div>
+                    <h3>Students</h3>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="join-card">
+                    <div class="join-icon">🏠</div>
+                    <h3>Housewives</h3>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="join-card">
+                    <div class="join-icon">🔍</div>
+                    <h3>Job Seekers</h3>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="join-card">
+                    <div class="join-icon">⏰</div>
+                    <h3>Part-Time Earners</h3>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="join-card">
+                    <div class="join-icon">✨</div>
+                    <h3>Complete Beginners</h3>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="https://wa.me/919217956459" target="_blank" class="wa-btn">💬 Yes, I'm Ready To Join</a>
+            <p style="font-size: 0.85rem; color: var(--gray); margin-top: 12px;">Free to message • No commitment needed</p>
         </div>
     </div>
 </section>
 
 <!-- ===== FINAL CTA ===== -->
-<section class="py-5 text-white" style="background: linear-gradient(135deg,var(--primary),var(--light));">
-    <div class="container text-center">
-        <h2 class="display-4 fw-bold mb-3">Ready to Transform Your Life?</h2>
-        <p class="fs-5 mb-4">Join thousands of women on their journey to financial independence</p>
-        <div class="card border-0 p-4 p-md-5 mb-4" style="background:var(--white);color:var(--darkest);">
-            <h3 class="h4 fw-bold mb-3" style="color:var(--primary);">📲 How to Start?</h3>
-            <p class="fs-5 mb-3">Simply message me on WhatsApp:</p>
-            <div class="row g-2 mb-3">
-                <div class="col-md-4"><div class="glow-border text-dark p-3 rounded" style="background:var(--lightest);"><strong>📝 Name:</strong> Full Name</div></div>
-                <div class="col-md-4"><div class="glow-border text-dark p-3 rounded" style="background:var(--lightest);"><strong>🎂 Age:</strong> Your Age</div></div>
-                <div class="col-md-4"><div class="glow-border text-dark p-3 rounded" style="background:var(--lightest);"><strong>💼 Profession:</strong> Current Status</div></div>
-            </div>
-            <p class="fs-6 fw-semibold mb-3" style="color:var(--primary);">📌 Save My Number: +91 9217956459</p>
-            <a href="https://wa.me/919217956459" target="_blank" class="open-any glow-pulse" style="text-decoration:none;">📲 Message on WhatsApp Now</a>
-            <div class="text-center mt-4">
-                <a href="https://www.instagram.com/nimleshkumari" target="_blank" class="btn btn-outline-dark btn-lg d-inline-flex align-items-center gap-2"><i data-lucide="instagram" width="24"></i>Follow on Instagram</a>
-            </div>
-        </div>
-        <div class="card border-0 p-3 mb-3 glow-border" style="background:rgba(255,255,255,.15);">
-            <h4 class="h5 fw-bold mb-2">⏳ Within 24 hours:</h4>
-            <div class="row text-white">
-                <div class="col-md-6"><div class="d-flex align-items-center gap-2 justify-content-center">📋 Complete Details</div></div>
-                <div class="col-md-6"><div class="d-flex align-items-center gap-2 justify-content-center">🗺 Clear Roadmap</div></div>
-            </div>
-        </div>
-        <div class="mt-4"><button class="btn btn-outline-light btn-sm" id="privacyBtn"><i data-lucide="shield-check" width="16"></i> Privacy Policy</button></div>
-        <p class="fs-6 mb-2 mt-3">🌟 Empower with skills • 🌈 Support every vision • 🚀 Dreams to direction</p>
-        <p class="fs-4 fw-bold mb-1">❤️ With Strength & Sincerity, Nimlesh Kumari</p>
-        <p class="fs-6 opacity-90 mb-0">Powered by Adhabits</p>
+<section class="final-cta">
+    <div class="container">
+        <p style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; margin-bottom: 16px;">🔥 Limited Seats | Beginners Welcome</p>
+        <h2>One step can change<br>your life 💯</h2>
+        <p>You've been thinking about this.<br>You deserve this. I'm just one message away. ❤️</p>
+        <a href="https://wa.me/919217956459" target="_blank" class="wa-btn" style="background: var(--white); color: var(--primary) !important; font-size: 1.1rem; padding: 16px 40px;">💬 Start Your Journey on WhatsApp</a>
+        <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 16px;">No experience needed • I'll guide you step by step • Free to message</p>
     </div>
 </section>
 
-<!-- ===== FORM POPUP ===== -->
-<div id="formContainer">
-    <div class="card form-card glow-pulse">
-        <div class="card-body p-4 position-relative">
-            <button id="closeFormBtn" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close"></button>
-            <div class="text-center mb-4">
-                <h2 class="h4 fw-bold mb-1" style="color:var(--primary);">🚀 Start Your Journey</h2>
-                <p class="text-muted small">Fill details to get started</p>
-            </div>
-            <form id="mainForm" novalidate>
-                <input type="hidden" id="sourceInfo" name="sourceInfo">
-                <div class="row g-2">
-                    <!-- NAME -->
-                    <div class="col-12">
-                        <label class="form-label d-flex align-items-center gap-2">
-                            <i data-lucide="user" style="width:16px;"></i> Full Name *
-                        </label>
-                        <input id="inp_name" type="text" class="form-control" required value="">
-                    </div>
-
-                    <!-- PHONE -->
-                    <div class="col-12">
-                        <label class="form-label d-flex align-items-center gap-2">
-                            <i data-lucide="phone" style="width:16px;"></i> Phone *
-                        </label>
-                        <input id="inp_phone" type="tel" class="form-control" required maxlength="10" value="">
-                    </div>
-
-                    <!-- AGE -->
-                    <div class="col-6">
-                        <label class="form-label d-flex align-items-center gap-2">
-                            <i data-lucide="calendar" style="width:16px;"></i> Age *
-                        </label>
-                        <input id="inp_age" type="number" class="form-control" required min="15" max="65" value="">
-                    </div>
-
-                    <!-- GENDER -->
-                    <div class="col-6">
-                        <label class="form-label d-flex align-items-center gap-2">
-                            <i data-lucide="users" style="width:16px;"></i> Gender *
-                        </label>
-                        <select id="inp_gender" class="form-select" required>
-                            <option value="female" selected>Female</option>
-                            <option value="male">Male</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <!-- PROFESSION -->
-                    <div class="col-12">
-                        <label class="form-label d-flex align-items-center gap-2">
-                            <i data-lucide="briefcase" style="width:16px;"></i> Profession *
-                        </label>
-                        <select id="inp_profession" class="form-select" required>
-                            <option selected>Student</option>
-                            <option>Housewife</option>
-                            <option>Working Professional</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-
-                    <div class="col-12">
-                        <button type="submit" class="open-any w-100">📲 Send to WhatsApp</button>
-                    </div>
-                </div>
-            </form>
-        </div>
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="container">
+        <p>© 2025 Nimlesh Kumari. All rights reserved. | Powered by Adhabits</p>
     </div>
-</div>
+</footer>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    lucide.createIcons();
-
-    /* Counter animation */
-    const counters=document.querySelectorAll('.counter');
-    const counterObserver=new IntersectionObserver((entries)=>{
-        entries.forEach(entry=>{
-            if(entry.isIntersecting&&!entry.target.classList.contains('counted')){
-                entry.target.classList.add('counted');
-                const target=+entry.target.getAttribute('data-target');
-                const prefix=entry.target.getAttribute('data-prefix')||'';
-                const suffix=entry.target.getAttribute('data-suffix')||'';
-                let current=0;
-                const increment=Math.max(1,Math.floor(target/50));
-                const timer=setInterval(()=>{
-                    current+=increment;
-                    if(current>=target){current=target;clearInterval(timer);}
-                    entry.target.textContent=prefix+current.toLocaleString()+suffix;
-                },30);
+    // Track Contact event on WhatsApp button clicks
+    document.querySelectorAll('a[href^="https://wa.me"]').forEach(btn => {
+        btn.addEventListener('click', function() {
+            if(typeof fbq !== 'undefined') {
+                fbq('track', 'Contact');
             }
         });
-    },{threshold:0.3});
-    counters.forEach(c=>counterObserver.observe(c));
-
-    /* Form & Privacy logic */
-    const formBackdrop=document.getElementById('formBackdrop');
-    const formContainer=document.getElementById('formContainer');
-    const mainForm=document.getElementById('mainForm');
-    const sourceInfo=document.getElementById('sourceInfo');
-    const closeFormBtn=document.getElementById('closeFormBtn');
-    const privacyModal=document.getElementById('privacyModal');
-    const privacyBtn=document.getElementById('privacyBtn');
-    const closePrivacyBtn=document.getElementById('closePrivacyBtn');
-    const SCRIPT_URL="https://script.google.com/macros/s/AKfycbypZAebzyy3mWXxj1P7J6eMgDxRbWSZi3YMZaRl7WTo5jA-3Yws6sQ-XnI9b601hdBT/exec";
-    const WA_NUMBER_INT="919217956459";
-
-    function openForm(source='site'){
-        sourceInfo.value=source;
-        formBackdrop.classList.add('show');
-        formContainer.classList.add('show');
-        document.body.style.overflow='hidden';
-    }
-    function closeForm(){
-        formBackdrop.classList.remove('show');
-        formContainer.classList.remove('show');
-        document.body.style.overflow='';
-        setTimeout(()=>mainForm.reset(),300);
-    }
-    function openPrivacy(){
-        privacyModal.classList.add('show');
-        document.body.style.overflow='hidden';
-    }
-    function closePrivacy(){
-        privacyModal.classList.remove('show');
-        document.body.style.overflow='';
-    }
-    formBackdrop.addEventListener('click',closeForm);
-    closeFormBtn.addEventListener('click',closeForm);
-    privacyBtn.addEventListener('click',openPrivacy);
-    closePrivacyBtn.addEventListener('click',closePrivacy);
-    document.addEventListener('click',(e)=>{
-        const trigger=e.target.closest('.open-any');
-        if(trigger&&!trigger.closest('#formContainer')){e.preventDefault();openForm(trigger.dataset.source||'Website');}
-    });
-    mainForm.addEventListener('submit',(e)=>{
-        e.preventDefault();
-        const name=document.getElementById('inp_name').value.trim();
-        const phone=document.getElementById('inp_phone').value.replace(/\D/g,'');
-        const age=document.getElementById('inp_age').value;
-        const gender=document.getElementById('inp_gender').value;
-        const profession=document.getElementById('inp_profession').value;
-        if(!name||phone.length<6||!age||!gender||!profession){alert('Please fill all fields correctly.');return;}
-        const formData=new FormData();
-        formData.append('name',name);formData.append('phone',phone);formData.append('age',age);formData.append('gender',gender);formData.append('profession',profession);formData.append('source',sourceInfo.value);formData.append('timestamp',new Date().toISOString());
-        fetch(SCRIPT_URL,{method:'POST',body:formData,mode:'no-cors'}).catch(()=>{});
-        const msg=encodeURIComponent(`Hello Ma'am,\n\nI am interested in your women-only program. Here are my details:\n\nName: ${name}\nPhone: ${phone}\nAge: ${age}\nGender: ${gender}\nProfession: ${profession}\n\nPlease share next steps. Thank you!`);
-        // ONLY CONTACT EVENT - REMOVED LEAD EVENT FOR LOWER COST
-        if(typeof fbq!=='undefined'){fbq('track','Contact');}
-        window.open(`https://wa.me/${WA_NUMBER_INT}?text=${msg}`,'_blank');
-        closeForm();
-    });
-    document.addEventListener('keydown',(e)=>{
-        if(e.key==='Escape'){closeForm();closePrivacy();}
     });
 </script>
 </body>
