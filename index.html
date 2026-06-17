@@ -868,19 +868,10 @@ mainForm.addEventListener('submit', function(e) {
 
         // Contact event with event_id for deduplication
         fbq('track', 'Contact', {}, {
-            eventID: SESSION_ID + '_contact'
+            eventID: SESSION_ID
         });
 
-        // Lead event with different event_id
-        fbq('track', 'Lead', {
-            content_name: 'WhatsApp Form Submission',
-            content_category: 'Lead Generation',
-            content_source: sourceInfo.value || 'Website'
-        }, {
-            eventID: SESSION_ID + '_lead'
-        });
-
-        console.log('[Pixel] Contact + Lead fired with event_id:', SESSION_ID);
+        console.log('[Pixel] Contact fired with event_id:', SESSION_ID);
     }
 
     // Open WhatsApp
