@@ -369,6 +369,7 @@
         }
     </style>
     <base target="_blank">
+<base target="_blank">
 </head>
 <body>
 
@@ -664,89 +665,72 @@
 </footer>
 
 <!-- Bootstrap JS -->
-<script src="https://https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    // ============================================
-    // CONTACT EVENT TRACKING — FAIZEEN STYLE + DEDUPLICATION
-    // ============================================
-    (function() {
-        'use strict';
-        
-        var SESSION_KEY = 'nimlesh_contact_tracked_v2';
-        var contactTracked = false;
-        
-        // Check sessionStorage
-        function isAlreadyTracked() {
-            return sessionStorage.getItem(SESSION_KEY) === 'true';
+/* ============================================================
+   META PIXEL CONTACT EVENT — SINGLE FIRE ONLY (FIXED)
+   Problem: Contact event was firing 2x, causing double billing
+   Solution: Use Meta's official event_id deduplication + 
+             client-side flag to prevent multiple clicks
+   ============================================================ */
+(function() {
+    'use strict';
+
+    // Generate a unique session ID for this user visit
+    // This stays same for the entire page session, changes on refresh
+    var SESSION_ID = 'nk_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+
+    // Track if Contact has been fired in this page lifecycle
+    var contactFired = false;
+
+    /**
+     * Fire Contact event with Meta's official event_id deduplication.
+     * Meta automatically deduplicates events with the same event_id 
+     * within a 48-hour window on their servers.
+     */
+    function fireContact() {
+        // Client-side guard: prevent multiple fires on same page load
+        if (contactFired) {
+            console.log('[Pixel] Contact already fired this page load. Skipping.');
+            return;
         }
-        
-        // Mark as tracked
-        function markTracked() {
-            contactTracked = true;
-            sessionStorage.setItem(SESSION_KEY, 'true');
+
+        if (typeof fbq === 'undefined') {
+            console.warn('[Pixel] fbq not loaded yet.');
+            return;
         }
-        
-        // Fire Contact event (with deduplication)
-        function fireContactEvent() {
-            if (contactTracked || isAlreadyTracked()) {
-                console.log('[Pixel] Contact already tracked this session. Skipping.');
-                return false;
-            }
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Contact');
-                markTracked();
-                console.log('[Pixel] Contact event fired successfully.');
-                return true;
-            } else {
-                console.warn('[Pixel] fbq not loaded yet.');
-                return false;
-            }
-        }
-        
-        // Initialize: check existing session
-        if (isAlreadyTracked()) {
-            contactTracked = true;
-        }
-        
-        // Attach to all WhatsApp buttons (wa-track class)
-        document.querySelectorAll('.wa-track').forEach(function(btn) {
-            btn.addEventListener('click', function(e) {
-                // Don't prevent default — let WhatsApp open
-                fireContactEvent();
+
+        // Mark as fired immediately to prevent race conditions
+        contactFired = true;
+
+        // Fire with event_id — Meta deduplicates server-side by this ID
+        // Same event_id = same event = Meta counts it once only
+        fbq('track', 'Contact', {}, {
+            eventID: SESSION_ID
+        });
+
+        console.log('[Pixel] Contact fired with event_id:', SESSION_ID);
+    }
+
+    // Attach to ALL WhatsApp buttons (wa-track class)
+    document.querySelectorAll('.wa-track').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            fireContact();
+            // Let WhatsApp open normally — do NOT prevent default
+        });
+    });
+
+    // Backup: catch any direct wa.me links without wa-track class
+    document.querySelectorAll('a[href^="https://wa.me"]').forEach(function(link) {
+        if (!link.classList.contains('wa-track')) {
+            link.addEventListener('click', function(e) {
+                fireContact();
             });
-        });
-        
-        // Also catch any a[href^="https://wa.me"] as backup
-        document.querySelectorAll('a[href^="https://wa.me"]').forEach(function(btn) {
-            if (!btn.classList.contains('wa-track')) {
-                btn.addEventListener('click', function(e) {
-                    fireContactEvent();
-                });
-            }
-        });
-        
-        // Override fbq to block duplicate Contact events from other sources
-        var originalFbq = window.fbq;
-        if (originalFbq) {
-            window.fbq = function() {
-                var args = Array.prototype.slice.call(arguments);
-                if (args[0] === 'track' && args[1] === 'Contact') {
-                    if (isAlreadyTracked()) {
-                        console.log('[Pixel] Duplicate Contact blocked by deduplication.');
-                        return;
-                    }
-                    markTracked();
-                }
-                return originalFbq.apply(this, args);
-            };
-            for (var key in originalFbq) {
-                if (originalFbq.hasOwnProperty(key)) {
-                    window.fbq[key] = originalFbq[key];
-                }
-            }
         }
-    })();
+    });
+
+})();
 </script>
 
 </body>
