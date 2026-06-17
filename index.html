@@ -359,6 +359,56 @@
             opacity: 0.7;
         }
 
+        /* Form Popup */
+        .form-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.7);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .4s ease;
+        }
+        .form-backdrop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        #formContainer {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) scale(.9);
+            z-index: 10000;
+            max-width: 500px;
+            width: 90%;
+            max-height: 85vh;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .4s ease;
+        }
+        #formContainer.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%,-50%) scale(1);
+        }
+        .form-card {
+            box-shadow: 0 0 40px rgba(239,68,68,.3);
+            border: 2px solid rgba(239,68,68,.2);
+            border-radius: 16px;
+            background: var(--white);
+        }
+        .form-control, .form-select {
+            border: 2px solid #E5E5E5;
+            border-radius: 8px;
+            padding: .6rem .9rem;
+            transition: all .3s ease;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(239,68,68,.15);
+        }
+
         @media(max-width:768px){
             .hero { padding: 70px 0 50px; min-height: auto; }
             .hero h1 { font-size: 2rem; }
@@ -373,6 +423,9 @@
 </head>
 <body>
 
+<!-- FORM POPUP BACKDROP -->
+<div class="form-backdrop" id="formBackdrop"></div>
+
 <!-- ===== HERO - NO IMAGE ===== -->
 <section class="hero">
     <div class="container">
@@ -382,7 +435,7 @@
                 <h1>Learn Digital Skills & <span>Start Earning From Home</span> 💻✨</h1>
                 <p>I'm <strong>Nimlesh Kumari</strong> — Business Consultant & Digital Mentor. I have helped <strong>500+ people</strong> start earning online.</p>
                 <p style="font-size: 0.95rem; color: var(--gray);">From India · Helping people since 2019</p>
-                <a href="https://wa.me/919217956459?text=Hello%20Mam%20I%20am%20interested%20please%20share%20me%20work%20details" class="wa-btn wa-track">👉 Start Your Journey on WhatsApp</a>
+                <button class="wa-btn open-form" data-source="Hero Section">👉 Start Your Journey on WhatsApp</button>
                 <p style="font-size: 0.85rem; color: var(--gray); margin-top: 12px;">No experience needed • I'll guide you step by step</p>
                 <div class="hero-stat mx-auto">
                     <div class="hero-stat-number">500+</div>
@@ -418,7 +471,7 @@
                 <p style="color: var(--gray); font-size: 1.05rem; line-height: 1.8;">
                     You are not alone. I've been exactly where you are right now.
                 </p>
-                <a href="https://wa.me/919217956459?text=Hello%20Mam%20I%20am%20interested%20please%20share%20me%20work%20details" class="wa-btn wa-track" style="margin-top: 10px;">💬 Let's Talk on WhatsApp</a>
+                <button class="wa-btn open-form" data-source="Mentor Section" style="margin-top: 10px;">💬 Let's Talk on WhatsApp</button>
                 <p style="font-size: 0.85rem; color: var(--gray); margin-top: 10px;">Free to message • I respond personally</p>
             </div>
         </div>
@@ -499,7 +552,7 @@
             <span class="skill-icon">📱</span>
             <span>Social Media Growth</span>
         </div>
-        <a href="https://wa.me/919217956459?text=Hello%20Mam%20I%20am%20interested%20please%20share%20me%20work%20details" class="wa-btn wa-track" style="margin-top: 20px;">👉 I Want To Learn This</a>
+        <button class="wa-btn open-form" data-source="Skills Section" style="margin-top: 20px;">👉 I Want To Learn This</button>
         <p style="font-size: 0.85rem; color: var(--gray); margin-top: 10px;">Starting from zero is perfectly fine ❤️</p>
     </div>
 </section>
@@ -590,7 +643,7 @@
                     <span class="story-tag">📚 Students</span>
                     <span class="story-tag">💯 Honest Guidance</span>
                 </div>
-                <a href="https://wa.me/919217956459?text=Hello%20Mam%20I%20am%20interested%20please%20share%20me%20work%20details" class="wa-btn wa-track" style="margin-top: 24px;">💬 Message Me on WhatsApp</a>
+                <button class="wa-btn open-form" data-source="Story Section" style="margin-top: 24px;">💬 Message Me on WhatsApp</button>
             </div>
             <div class="col-lg-6 text-center">
                 <img src="https://i.ibb.co/mrFgnwT4/Whats-App-Image-2026-06-03-at-11-51-16-AM.jpg" alt="Nimlesh Kumari" style="width: 100%; max-width: 380px; height: 480px; object-fit: cover; border-radius: 20px; box-shadow: 0 20px 60px rgba(239,68,68,.15);">
@@ -640,7 +693,7 @@
             </div>
         </div>
         <div class="text-center mt-5">
-            <a href="https://wa.me/919217956459?text=Hello%20Mam%20I%20am%20interested%20please%20share%20me%20work%20details" class="wa-btn wa-track">💬 Yes, I'm Ready To Join</a>
+            <button class="wa-btn open-form" data-source="Join Section">💬 Yes, I'm Ready To Join</button>
             <p style="font-size: 0.85rem; color: var(--gray); margin-top: 12px;">Free to message • No commitment needed</p>
         </div>
     </div>
@@ -652,7 +705,7 @@
         <p style="font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; opacity: 0.8; margin-bottom: 16px;">🔥 Limited Seats | Beginners Welcome</p>
         <h2>One step can change<br>your life 💯</h2>
         <p>You've been thinking about this.<br>You deserve this. I'm just one message away. ❤️</p>
-        <a href="https://wa.me/919217956459?text=Hello%20Mam%20I%20am%20interested%20please%20share%20me%20work%20details" class="wa-btn wa-track" style="background: var(--white); color: var(--primary) !important; font-size: 1.1rem; padding: 16px 40px;">💬 Start Your Journey on WhatsApp</a>
+        <button class="wa-btn open-form" data-source="Final CTA" style="background: var(--white); color: var(--primary) !important; font-size: 1.1rem; padding: 16px 40px;">💬 Start Your Journey on WhatsApp</button>
         <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 16px;">No experience needed • I'll guide you step by step • Free to message</p>
     </div>
 </section>
@@ -664,73 +717,198 @@
     </div>
 </footer>
 
+<!-- FORM POPUP -->
+<div id="formContainer">
+    <div class="card form-card">
+        <div class="card-body p-4 position-relative">
+            <button id="closeFormBtn" class="btn-close position-absolute top-0 end-0 m-3" aria-label="Close"></button>
+            <div class="text-center mb-4">
+                <h2 class="h4 fw-bold mb-1" style="color: var(--primary);">🚀 Start Your Journey</h2>
+                <p class="text-muted small">Fill details to get started</p>
+            </div>
+            <form id="mainForm" novalidate>
+                <input type="hidden" id="sourceInfo" name="sourceInfo">
+                <div class="row g-2">
+                    <div class="col-12">
+                        <label class="form-label d-flex align-items-center gap-2" style="font-weight: 600; font-size: 0.9rem;">
+                            <span>👤</span> Full Name *
+                        </label>
+                        <input id="inp_name" type="text" class="form-control" required placeholder="Your full name">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label d-flex align-items-center gap-2" style="font-weight: 600; font-size: 0.9rem;">
+                            <span>📱</span> Phone *
+                        </label>
+                        <input id="inp_phone" type="tel" class="form-control" required placeholder="10-digit number" maxlength="10">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label d-flex align-items-center gap-2" style="font-weight: 600; font-size: 0.9rem;">
+                            <span>🎂</span> Age *
+                        </label>
+                        <input id="inp_age" type="number" class="form-control" required placeholder="Age" min="15" max="65">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label d-flex align-items-center gap-2" style="font-weight: 600; font-size: 0.9rem;">
+                            <span>⚧</span> Gender *
+                        </label>
+                        <select id="inp_gender" class="form-select" required>
+                            <option value="">Select</option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label d-flex align-items-center gap-2" style="font-weight: 600; font-size: 0.9rem;">
+                            <span>💼</span> Profession *
+                        </label>
+                        <select id="inp_profession" class="form-select" required>
+                            <option value="">Select Profession</option>
+                            <option>Student</option>
+                            <option>Housewife</option>
+                            <option>Working Professional</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="wa-btn w-100" style="margin-top: 8px;">📲 Send to WhatsApp</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
 /* ============================================================
-   META PIXEL CONTACT EVENT — SINGLE FIRE ONLY (FIXED)
-   Problem: Contact event was firing 2x, causing double billing
-   Solution: Use Meta's official event_id deduplication + 
-             client-side flag to prevent multiple clicks
+   FORM POPUP + GOOGLE SHEET + WHATSAPP + META PIXEL
+   Pattern: Same as Pari Khan's code
+   Deduplication: event_id + client-side flag
    ============================================================ */
-(function() {
-    'use strict';
 
-    // Generate a unique session ID for this user visit
-    // This stays same for the entire page session, changes on refresh
-    var SESSION_ID = 'nk_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+const formBackdrop = document.getElementById('formBackdrop');
+const formContainer = document.getElementById('formContainer');
+const mainForm = document.getElementById('mainForm');
+const sourceInfo = document.getElementById('sourceInfo');
+const closeFormBtn = document.getElementById('closeFormBtn');
 
-    // Track if Contact has been fired in this page lifecycle
-    var contactFired = false;
+// Google Sheet URL (replace with your actual URL)
+const SCRIPT_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
 
-    /**
-     * Fire Contact event with Meta's official event_id deduplication.
-     * Meta automatically deduplicates events with the same event_id 
-     * within a 48-hour window on their servers.
-     */
-    function fireContact() {
-        // Client-side guard: prevent multiple fires on same page load
-        if (contactFired) {
-            console.log('[Pixel] Contact already fired this page load. Skipping.');
-            return;
-        }
+// WhatsApp Number
+const WA_NUMBER_INT = "919217956459";
 
-        if (typeof fbq === 'undefined') {
-            console.warn('[Pixel] fbq not loaded yet.');
-            return;
-        }
+// Unique session ID for deduplication
+const SESSION_ID = 'nk_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
 
-        // Mark as fired immediately to prevent race conditions
-        contactFired = true;
+// Flag to prevent double firing
+var contactFired = false;
 
-        // Fire with event_id — Meta deduplicates server-side by this ID
-        // Same event_id = same event = Meta counts it once only
-        fbq('track', 'Contact', {}, {
-            eventID: SESSION_ID
-        });
+function openForm(source) {
+    sourceInfo.value = source;
+    formBackdrop.classList.add('show');
+    formContainer.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
 
-        console.log('[Pixel] Contact fired with event_id:', SESSION_ID);
+function closeForm() {
+    formBackdrop.classList.remove('show');
+    formContainer.classList.remove('show');
+    document.body.style.overflow = '';
+    setTimeout(() => mainForm.reset(), 300);
+}
+
+formBackdrop.addEventListener('click', closeForm);
+closeFormBtn.addEventListener('click', closeForm);
+
+document.addEventListener('click', function(e) {
+    const t = e.target.closest('.open-form');
+    if (t && !t.closest('#formContainer')) {
+        e.preventDefault();
+        openForm(t.getAttribute('data-source') || 'Website');
+    }
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeForm();
+});
+
+mainForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('inp_name').value.trim();
+    const phone = document.getElementById('inp_phone').value.replace(/\D/g, '');
+    const age = document.getElementById('inp_age').value;
+    const gender = document.getElementById('inp_gender').value;
+    const profession = document.getElementById('inp_profession').value;
+
+    if (!name || phone.length < 6 || !age || !gender || !profession) {
+        alert('Please fill all fields correctly.');
+        return;
     }
 
-    // Attach to ALL WhatsApp buttons (wa-track class)
-    document.querySelectorAll('.wa-track').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            fireContact();
-            // Let WhatsApp open normally — do NOT prevent default
+    // Send to Google Sheet
+    const fd = new FormData();
+    fd.append('name', name);
+    fd.append('phone', phone);
+    fd.append('age', age);
+    fd.append('gender', gender);
+    fd.append('profession', profession);
+    fd.append('source', sourceInfo.value || 'Website');
+    fd.append('timestamp', new Date().toISOString());
+
+    fetch(SCRIPT_URL, { method: 'POST', body: fd, mode: 'no-cors' }).catch(() => {});
+
+    // Fire Contact + Lead events — ONLY ONCE per page session
+    if (typeof fbq !== 'undefined' && !contactFired) {
+        contactFired = true;
+
+        // Contact event with event_id for deduplication
+        fbq('track', 'Contact', {}, {
+            eventID: SESSION_ID + '_contact'
         });
-    });
 
-    // Backup: catch any direct wa.me links without wa-track class
-    document.querySelectorAll('a[href^="https://wa.me"]').forEach(function(link) {
-        if (!link.classList.contains('wa-track')) {
-            link.addEventListener('click', function(e) {
-                fireContact();
-            });
-        }
-    });
+        // Lead event with different event_id
+        fbq('track', 'Lead', {
+            content_name: 'WhatsApp Form Submission',
+            content_category: 'Lead Generation',
+            content_source: sourceInfo.value || 'Website'
+        }, {
+            eventID: SESSION_ID + '_lead'
+        });
 
-})();
+        console.log('[Pixel] Contact + Lead fired with event_id:', SESSION_ID);
+    }
+
+    // Open WhatsApp
+    const msg = encodeURIComponent(
+        `Hello Ma'am,
+
+` +
+        `I am interested in your program. Here are my details:
+
+` +
+        `Name: ${name}
+` +
+        `Phone: ${phone}
+` +
+        `Age: ${age}
+` +
+        `Gender: ${gender}
+` +
+        `Profession: ${profession}
+
+` +
+        `Please share next steps. Thank you!`
+    );
+
+    window.open(`https://wa.me/${WA_NUMBER_INT}?text=${msg}`, '_blank');
+
+    closeForm();
+});
 </script>
 
 </body>
